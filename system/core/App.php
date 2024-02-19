@@ -9,8 +9,8 @@ class App {
         $url = $this->parseURL();
         $folder = is_dir("../app/controllers/") ? "../app/controllers/" : "./app/controllers/";
        
-        if (file_exists($folder . @$url[0] . ".php")){
-            $this->controller = $url[0];
+        if (file_exists($folder . ucwords(@$url[0]) . ".php")){
+            $this->controller = ucwords($url[0]);
             unset($url[0]);
         } else {
             echo "Controller Tidak Ditemukan";
