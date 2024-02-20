@@ -7,6 +7,7 @@ class Nilai extends ct\Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->cekLogin();
         $this->backend = new \backend;
     }
 

@@ -27,5 +27,14 @@ class Controller
         }
     }
 
-
+    public function cekLogin(){
+        session_start();
+        if(isset($_SESSION)){
+            if ($_SESSION["login"] != true){
+                redirect(base_url("auth"));
+            }
+        } else {
+            redirect(base_url("auth"));
+        }
+    }
 }

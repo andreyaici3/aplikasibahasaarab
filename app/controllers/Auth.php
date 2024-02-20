@@ -11,6 +11,8 @@ class Auth extends ct\Controller{
 
     public function index()
     {
+        session_start();
+       
         $this->view("auth/login");
     }
 
@@ -19,6 +21,9 @@ class Auth extends ct\Controller{
             extract($_POST);
             $query = $this->db->query("SELECT * FROM guru WHERE username = '$username' AND password = '$password'");
             if ($query){
+                session_start();
+                $_SESSION["login"] = true;
+                $_SESSION["data"] = $query[0];
                 redirect(base_url());
             } else {
                 redirect(base_url("auth"));
