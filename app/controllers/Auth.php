@@ -34,6 +34,12 @@ class Auth extends ct\Controller{
         }
     }
 
+    public function logout()
+    {
+        session_destroy();
+        redirect(base_url('auth'));
+    }
+
 }
 
 
