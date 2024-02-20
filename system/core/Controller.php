@@ -41,7 +41,7 @@ class Controller
     public function notLogin(){
         session_start();
         if(isset($_SESSION)){
-            if ($_SESSION["login"] == true){
+            if (@$_SESSION["login"] == true){
                 redirect(base_url("/"));
             }
         } else {
