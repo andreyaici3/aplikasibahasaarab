@@ -6,12 +6,13 @@ class Auth extends ct\Controller{
     public function __construct()
     {
         parent::__construct();
+        $this->notLogin();
         $this->backend = new backend;
     }
 
     public function index()
     {
-        session_start();
+       
        
         $this->view("auth/login");
     }
