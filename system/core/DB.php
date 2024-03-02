@@ -59,8 +59,15 @@ class db
         }
         $str = rtrim($str, ", ");
         $str .= " WHERE `$tabel`.";
-        foreach ($kondisi as $key => $value) {
-            $str .= "`$key` = '$value'";
+        if (count($kondisi) == 1){
+            foreach ($kondisi as $key => $value) {
+                $str .= "`$key` = '$value'";
+            }
+        } else {
+            foreach ($kondisi as $key => $value) {
+                $str .= "`$key` = '$value' AND ";
+            }
+            $str = substr($str, 0, -4);;
         }
         mysqli_query($this->koneksi, $str);
         return mysqli_affected_rows($this->koneksi);

@@ -12,8 +12,6 @@ class Auth extends ct\Controller{
 
     public function index()
     {
-       
-       
         $this->view("auth/login");
     }
 
@@ -34,12 +32,7 @@ class Auth extends ct\Controller{
         }
     }
 
-    public function logout()
-    {
-        session_start();
-        session_destroy();
-        redirect(base_url('auth'));
-    }
+    
 
 }
 

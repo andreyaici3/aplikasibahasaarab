@@ -48,4 +48,32 @@ class Controller
             redirect(base_url("auth"));
         }
     }
+
+    public function sendResponse($result, $message)
+    {
+        header("Content-Type: Application/json");
+        $response = [
+            'success' => true,
+            'message' => $message,
+            'data'    => $result,
+        ];
+        http_response_code(200);
+        echo json_encode($response);
+    }
+
+    public function sendError( $error, $code = 404, $errorMessages = [])
+    {
+        header("Content-Type: Application/json");
+        $response = [
+            'success' => false,
+            'message' => $error,
+        ];
+        if (!empty($errorMessages)) {
+            $response['data'] = $errorMessages;
+        }
+        http_response_code($code);
+        echo json_encode($response);
+    }
+
+
 }

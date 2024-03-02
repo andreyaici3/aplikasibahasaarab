@@ -1,7 +1,6 @@
 <?php
 
 use core\Controller as ct;
-use Controller\Home as hm;
 
 class Siswa extends ct\Controller
 {
