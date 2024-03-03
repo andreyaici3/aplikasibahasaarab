@@ -21,7 +21,8 @@ class Nilai extends ct\Controller {
 
     public function reset($id_nilai, $id_siswa){
         $this->db->update("nilai", [
-            "nilai" => 0
+            "nilai" => 0,
+            "waktu_akses" => null
         ], [
             "id" => $id_nilai
         ]);
