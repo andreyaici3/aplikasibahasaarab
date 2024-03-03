@@ -69,7 +69,7 @@ class Api extends ct\Controller
     }
 
     public function getNilai(){
-        $siswa = $this->db->query("SELECT * FROM siswa");
+        $siswa = $this->db->query("SELECT id, nama FROM siswa");
 
         foreach ($siswa as &$value) {
             $detail = $this->db->query("SELECT * FROM nilai WHERE id_siswa = '$value->id'");
