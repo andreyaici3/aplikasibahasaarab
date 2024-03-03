@@ -67,4 +67,14 @@ class Api extends ct\Controller
             $this->sendError("Data Tidak Lengkap", 403);
         }
     }
+
+    public function getNilai(){
+        $siswa = $this->db->query("SELECT * FROM siswa");
+
+        foreach ($siswa as &$value) {
+            $detail = $this->db->query("SELECT * FROM nilai WHERE id_siswa = '$value->id'");
+            $value->nilai = $detail;
+        }
+        return $this->sendResponse($siswa, "Data Siswa Berhasil Di Ambil");
+    }
 }
