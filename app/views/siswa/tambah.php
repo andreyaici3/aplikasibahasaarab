@@ -9,12 +9,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap">
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
                         </div>
                     </div>
                 </div>
@@ -24,12 +24,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="number" class="form-control" id="kelas" name="kelas" placeholder="Kelas">
+                            <input type="number" class="form-control" id="kelas" name="kelas" placeholder="Kelas" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="col-md-6">
